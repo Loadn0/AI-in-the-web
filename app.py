@@ -1,4 +1,5 @@
 import streamlit as st
+<<<<<<< HEAD
 import random
 goal_word_list = ["apple", "grape", "peach", "mango", "berry"]
 
@@ -41,3 +42,7 @@ if submit:
 
 #if input_word.lower() not in goal_word_list:
 #    goal_word_list.append(input_word.lower())'''
+=======
+st.title("Meine erste Streamlit App")
+st.write("Hello world! It works")
+>>>>>>> 648c6b736b782be670e85b136f91606bfb3eef4c

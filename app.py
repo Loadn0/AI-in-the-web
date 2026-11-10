@@ -1,6 +1,6 @@
 import streamlit as st
-<<<<<<< HEAD
 import random
+import time
 goal_word_list = ["apple", "grape", "peach", "mango", "berry"]
 
 if "goal_word" not in st.session_state:
@@ -12,27 +12,29 @@ letter_safe = []
 st.title("Word guesser")
 st.write("Guess a word with 5 Letters.")
 submit = st.button("submit")
+stats = st.button("Stats")
 input_word = st.text_input("Enter your guess here:")
 if submit:    
     if input_word:
         #input_word.rerun()   
         if len(input_word) != 5:
             st.write("Please enter a 5-letter word.")
-        elif input_word.lower() == goal_word:
-            st.write("Congratulations! You guessed the correct word!: " + goal_word)
+        elif input_word.lower() == st.session_state["goal_word"]:
+            st.write("Congratulations! You guessed the correct word!: " + st.session_state["goal_word"])
             st.balloons()
+            time.sleep(5)
             #goal_word = goal_word_list.random.choice(goal_word_list)
-            #st.rerun()
+            st.rerun()
         else:
             st.write("Try again!")
     
         for i in range (5):
-            if goal_word[i] == input_word[i]:
+            if st.session_state["goal_word"][i] == input_word[i]:
                 guessed_letters += 1    
 
             
             for j in range (5):
-                if goal_word[i] == input_word[j] and i != j and input_word[j] != goal_word[j] and input_word[j] not in letter_safe:
+                if st.session_state["goal_word"][i] == input_word[j] and i != j and input_word[j] != st.session_state["goal_word"][j] and input_word[j] not in letter_safe:
                     wrong_positions += 1
                     letter_safe.append(input_word[j])
             
@@ -42,7 +44,6 @@ if submit:
 
 #if input_word.lower() not in goal_word_list:
 #    goal_word_list.append(input_word.lower())'''
-=======
-st.title("Meine erste Streamlit App")
-st.write("Hello world! It works")
->>>>>>> 648c6b736b782be670e85b136f91606bfb3eef4c
+
+#if stats:
+ #   streamlit.run 

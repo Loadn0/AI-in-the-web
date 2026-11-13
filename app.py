@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-goal_word_list = ["apple", "grape", "peach", "mango", "berry"]
+goal_word_list = ["apple", "grape", "peach", "mango", "berry","lemon", "melon", "cherry", "hello", "pearl"]
 
 if "goal_word" not in st.session_state:
     st.session_state["goal_word"] = random.choice(goal_word_list)
